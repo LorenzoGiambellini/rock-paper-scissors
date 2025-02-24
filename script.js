@@ -10,8 +10,10 @@ function getComputerChoice() {
 console.log(getComputerChoice());
 
 function getHumanChoice() {
-    let x = prompt("choose your weapon");
-    console.log(x);
-    return x;
+    let x = prompt("choose your weapon:\nR: rock\nP: paper\nS: scissors");
+    if (x == "R") return "rock";
+    else if (x == "P") return "paper";
+    else if (x == "S") return "scissors";
 }
-getHumanChoice();
+console.log(getHumanChoice());
+
