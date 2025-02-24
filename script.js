@@ -1,7 +1,7 @@
 function getComputerChoice() {
-    let x = Math.random()*100;
-    if (x < 33) return "rock";
-    else if (x > 66) return "paper";
+    let x = Math.round(Math.random()*2);
+    if (x == 0) return "rock";
+    else if (x == 1) return "paper";
     else return "scissors";
     }
 
