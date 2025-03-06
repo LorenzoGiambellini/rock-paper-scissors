@@ -5,13 +5,6 @@ function getComputerChoice() {
     else return "scissors";
     }
 
-/* function getHumanChoice() {
-    let x = prompt("choose your weapon:\n- rock\n- paper\n- scissors");
-
-    return x.toLowerCase();
-} */
-
-
 function playGame(){
     let humanScore = 0; 
     let computerScore = 0;
@@ -35,8 +28,25 @@ function playGame(){
         console.log("Computer Choice: " + computerChoice);
         console.log("Human Score: " + humanScore);
         console.log("Computer Score: " + computerScore);
-    }
+
+        pScore.textContent = "Human " + humanScore + " : " + computerScore + " Computer";
+        pChoice.textContent = humanChoice + " VS " + computerChoice;
+
+        if(humanScore == 5) {
+            humanScore = 0;
+            computerScore = 0;
+            pScore.textContent = "The Winner is HUMAN!"
+            pChoice.textContent = "";
+        }
     
+        else if(computerScore == 5) {
+            humanScore = 0;
+            computerScore = 0;
+            pScore.textContent = "The Winner is COMPUTER!"
+            pChoice.textContent = "";
+        }
+    }
+
     const button = document.querySelectorAll("button");
     button.forEach(button => {
         button.addEventListener("click", () => {
@@ -60,7 +70,18 @@ function playGame(){
         });   
     })
 
+    
 
 }
+
+const div = document.querySelector("div");
+const pScore = document.createElement("p");
+const pChoice = document.createElement("p");
+
+div.appendChild(pScore);
+div.appendChild(pChoice);
+
+
+
 
 playGame();
