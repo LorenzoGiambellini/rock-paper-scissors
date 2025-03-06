@@ -5,43 +5,18 @@ function getComputerChoice() {
     else return "scissors";
     }
 
-function getHumanChoice() {
+/* function getHumanChoice() {
     let x = prompt("choose your weapon:\n- rock\n- paper\n- scissors");
 
     return x.toLowerCase();
-}
+} */
 
-
-const button = document.querySelectorAll("button");
-button.forEach(button => {
-    button.addEventListener("click", () => {
-        let playerChoice;
-    
-        switch(button.id) {
-            case "rock-btn":
-                console.log("Player Choice: Rock");
-                playerChoice = "rock";
-                break;
-            
-            case "paper-btn":
-                console.log("Player Choice: Paper");
-                playerChoice = "paper";
-                break;
-    
-            case "scissors-btn":
-                console.log("Player: Choice: Scissors");
-                playerChoice = "scissors";
-                break;
-        }
-    });   
-})
 
 function playGame(){
     let humanScore = 0; 
     let computerScore = 0;
     let humanSelection;
-    let computerSelection;
-    console.log(computerSelection);
+
     
     function playRound(humanChoice, computerChoice) {
         if(humanChoice === "rock"){
@@ -56,16 +31,36 @@ function playGame(){
             if(computerChoice === "rock") computerScore +=1;
             if(computerChoice === "paper") humanScore +=1;
         }
-    }
-    /* for(let i = 0; i < 5; i++){
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-        console.log("Human Choice: " + humanSelection);
-        console.log("Computer Choice: " + computerSelection);
+        console.log("Human Choice: " + humanChoice);
+        console.log("Computer Choice: " + computerChoice);
         console.log("Human Score: " + humanScore);
         console.log("Computer Score: " + computerScore);
-    } */
+    }
+    
+    const button = document.querySelectorAll("button");
+    button.forEach(button => {
+        button.addEventListener("click", () => {
+        
+            switch(button.id) {
+                case "rock-btn":
+                    humanSelection = "rock";
+                    playRound(humanSelection, getComputerChoice());
+                    break;
+                
+                case "paper-btn":
+                    humanSelection = "paper";
+                    playRound(humanSelection, getComputerChoice());
+                    break;
+        
+                case "scissors-btn":
+                    humanSelection = "scissors";
+                    playRound(humanSelection, getComputerChoice());
+                    break;
+            }
+        });   
+    })
+
+
 }
 
 playGame();
