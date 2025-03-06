@@ -1,7 +1,9 @@
 # rock-paper-scissors
 
-Simple console version of rock paper scissors using basic JS
+OLD VERSION [Simple console version of rock paper scissors using basic JS
 
 [Link Preview](https://lorenzogiambellini.github.io/rock-paper-scissors/)
 
-remember to open the console
+remember to open the console]
+
+Rock Paper Scissors with DOM manipulation
