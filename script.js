@@ -12,7 +12,29 @@ function getHumanChoice() {
 }
 
 
-
+const button = document.querySelectorAll("button");
+button.forEach(button => {
+    button.addEventListener("click", () => {
+        let playerChoice;
+    
+        switch(button.id) {
+            case "rock-btn":
+                console.log("Player Choice: Rock");
+                playerChoice = "rock";
+                break;
+            
+            case "paper-btn":
+                console.log("Player Choice: Paper");
+                playerChoice = "paper";
+                break;
+    
+            case "scissors-btn":
+                console.log("Player: Choice: Scissors");
+                playerChoice = "scissors";
+                break;
+        }
+    });   
+})
 
 function playGame(){
     let humanScore = 0; 
@@ -35,7 +57,7 @@ function playGame(){
             if(computerChoice === "paper") humanScore +=1;
         }
     }
-    for(let i = 0; i < 5; i++){
+    /* for(let i = 0; i < 5; i++){
         humanSelection = getHumanChoice();
         computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
@@ -43,7 +65,7 @@ function playGame(){
         console.log("Computer Choice: " + computerSelection);
         console.log("Human Score: " + humanScore);
         console.log("Computer Score: " + computerScore);
-    }
+    } */
 }
 
 playGame();
